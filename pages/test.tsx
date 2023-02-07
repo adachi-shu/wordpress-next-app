@@ -10,7 +10,7 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const data = edges
-  console.log(data)
+  // console.log(data)
 
   return (
     <div>
