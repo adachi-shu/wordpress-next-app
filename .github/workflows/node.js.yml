@@ -1,0 +1,33 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  repository_dispatch:
+    branches: [ "main" ]
+    types: []
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.12.1
+    - run: touch .env
+    - run: echo "WORDPRESS_API_URL=${{ secrets.WORDPRESS_API_URL_KEY }}" >> .env
+    - name: yarn install
+      run: |
+           npm install
+           npm run build
+    - name: deploy to Firebase Hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
