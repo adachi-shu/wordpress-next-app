@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
   repository_dispatch:
     branches: [ "main" ]
-    types: []
+    types: [update_post]
 
 jobs:
   build:
