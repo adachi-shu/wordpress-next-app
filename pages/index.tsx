@@ -10,10 +10,12 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  const morePosts = edges.slice(1)
+  const morePosts = edges
+  console.log(heroPost)
+  console.log(morePosts)
 
   return (
-    <Layout preview={preview}>
+    <div>
       <Head>
         <title>Next.js Blog Example with {CMS_NAME}</title>
       </Head>
@@ -31,7 +33,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-    </Layout>
+    </div>
   )
 }
 

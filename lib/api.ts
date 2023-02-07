@@ -210,3 +210,51 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
 
   return data
 }
+
+//自作functions
+
+// export async function get() {
+//   const data = await fetchAPI(`
+//     {
+//       posts(first: 10000) {
+//         edges {
+//           node {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   `)
+//   return data?.posts
+// }
+
+export async function getPostsData(preview) {
+  const data = await fetchAPI(
+    `
+    query AllPosts {
+      posts {
+        edges {
+          node {
+            title
+            excerpt
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  )
+
+  return data?.posts
+
+}
