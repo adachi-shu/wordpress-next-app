@@ -213,28 +213,29 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
 
 //自作functions
 
-// export async function get() {
-//   const data = await fetchAPI(`
-//     {
-//       posts(first: 10000) {
-//         edges {
-//           node {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   return data?.posts
-// }
+export async function getAllBlogWithId() {
+  const data = await fetchAPI(`
+    {
+      posts {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `)
+  return data?.posts
+}
 
-export async function getPostsData(preview) {
+export async function getBlogData(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
       posts {
         edges {
           node {
+            id
             title
             excerpt
             featuredImage {
@@ -258,3 +259,6 @@ export async function getPostsData(preview) {
   return data?.posts
 
 }
+
+
+

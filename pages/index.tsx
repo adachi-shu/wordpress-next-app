@@ -7,18 +7,14 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import Header from '../components/header'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   const morePosts = edges
-  // console.log(heroPost)
-  // console.log(morePosts)
 
   return (
     <div>
-      <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
-      </Head>
       <Container>
         <Intro />
         {heroPost && (
