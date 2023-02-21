@@ -1,11 +1,13 @@
 import Head from "next/head"
 import { Button } from "flowbite-react";
 import Img from "./public/photo.jpg"
+import Header from "../components/header"
 
 export default function About() {
 
   return (
     <div>
+      <Header/>
       <Head>
         <title>ABOUT</title>
       </Head>
@@ -17,7 +19,7 @@ export default function About() {
         </div>
         <div className="flex">
           <div className="flex-1">
-            <img src={Img.src} alt="img" />
+            <img src={Img.src} alt="img" className="object-cover h-full w-full"/>
           </div>
           <div className="flex-1 text-left bg-teal-300 text-white">
             <div className="p-10 h-full">
@@ -44,12 +46,12 @@ export default function About() {
             </div>
           </div>
           <div className="flex-1">
-            <img src={Img.src} alt="img" />
+            <img src={Img.src} alt="img" className="object-fill h-full w-full" />
           </div>
         </div>
         <div className="flex">
           <div className="flex-1">
-            <img src={Img.src} alt="img" />
+            <img src={Img.src} alt="img" className="object-contain h-full w-full" />
           </div>
           <div className="flex-1 text-left bg-teal-300 text-white">
             <div className="p-10 h-full">

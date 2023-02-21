@@ -50,7 +50,7 @@ export async function getAllPostsWithSlug() {
       posts(first: 10000) {
         edges {
           node {
-            slug
+            id
           }
         }
       }
@@ -164,6 +164,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
               title
               excerpt
               content
+              id
               author {
                 node {
                   ...AuthorFields
@@ -238,6 +239,7 @@ export async function getBlogData(preview) {
             id
             title
             excerpt
+            slug
             featuredImage {
               node {
                 sourceUrl
@@ -257,8 +259,32 @@ export async function getBlogData(preview) {
   )
 
   return data?.posts
-
 }
 
+export async function getPostData(id) {
+  const data = await fetchAPI(
+    `
+    query PostData($id:ID!) {
+      post(id: $id) {
+        featuredImage {
+          node {
+            altText
+            sourceUrl
+          }
+        }
+        title
+        content
+        id
+      }
+    }
+    `,
+    {
+      variables: {
+        id
+      },
+    }
+  )
+  return data
+}
 
 

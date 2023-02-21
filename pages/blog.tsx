@@ -4,14 +4,21 @@ import Link from 'next/link'
 import { getBlogData } from '../lib/api'
 import { Card } from 'flowbite-react'
 import Img from "./public/photo.jpg"
+import Header from '../components/header';
 
-export default function Blog({ allPosts: { edges }, preview }) {
+export default function Blogs({ allPosts: { edges }, preview }) {
   const data = edges
+  const img = data.featuredImage?.node.sourceUrl
 
   return (
     <div>
+      <Header/>
       <Head>
         <title>BLOG</title>
+        <meta
+          property="og:image"
+          content={data.featuredImage?.node.sourceUrl}
+        />
       </Head>
       <div className="m-20">
         <div className="text-center">
@@ -19,8 +26,11 @@ export default function Blog({ allPosts: { edges }, preview }) {
         </div>
         <div className="flex flex-wrap">
           {data.map(({ node }) => (
-            <Link href={`/posts/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
+            <Link href={`/blog/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
               <Card imgSrc={Img.src}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: img }}
+                />
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {node.title}
                 </h5>

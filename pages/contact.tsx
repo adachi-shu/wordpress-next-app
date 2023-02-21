@@ -1,9 +1,11 @@
 import Head from "next/head"
 import { Button, Label, TextInput } from "flowbite-react";
+import Header from "../components/header";
 
 export default function Contact() {
   return (
     <div className="m-20">
+      <Header/>
       <Head>
         <title>CONTACT</title>
       </Head>
