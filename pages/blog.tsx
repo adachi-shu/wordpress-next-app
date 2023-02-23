@@ -5,6 +5,7 @@ import { getBlogData } from '../lib/api'
 import { Card } from 'flowbite-react'
 import Img from "./public/photo.jpg"
 import Header from '../components/header';
+import CardItem from '../components/card';
 
 export default function Blogs({ allPosts: { edges }, preview }) {
   const data = edges
@@ -26,21 +27,18 @@ export default function Blogs({ allPosts: { edges }, preview }) {
         </div>
         <div className="flex flex-wrap">
           {data.map(({ node }) => (
-            <Link href={`/blog/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
-              <Card imgSrc={Img.src}>
-                <div
-                  dangerouslySetInnerHTML={{ __html: img }}
+           <div className="md:basis-1/3 basis-1/2 p-2">
+            <Link href={`/blog/${node.id}`} key={node.id}>
+              {data && (
+                <CardItem
+                  title={node.title}
+                  id={node.id}
+                  excerpt={node.excerpt}
+                  image={node.featuredImage}
                 />
-                <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {node.title}
-                </h5>
-                <div
-                  className="font-normal text-gray-700 dark:text-gray-400"
-                  dangerouslySetInnerHTML={{
-                    __html: `${node.excerpt}`,
-                  }}/>
-              </Card>
+              )}
             </Link>
+          </div>
           ))}
         </div>
       </div>

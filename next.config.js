@@ -17,4 +17,5 @@ module.exports = {
       'gini.oops.jp'
     ],
   },
+  trailingSlash: true,
 }
