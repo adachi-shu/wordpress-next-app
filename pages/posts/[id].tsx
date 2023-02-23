@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllBlogWithId()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/blog/${node.id}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/posts/${node.id}`) || [],
     fallback: false,
   }
 }

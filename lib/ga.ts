@@ -35,7 +35,7 @@ export const fetchPopularPosts = async (
         fieldName: 'pagePath',
         stringFilter: {
           matchType: 'CONTAINS',
-          value: '/posts/'
+          value: '/blog/'
         }
       }
     },

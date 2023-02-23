@@ -8,7 +8,7 @@ export default function HeroPost({
   date,
   excerpt,
   author,
-  slug,
+  id,
 }) {
   return (
     <section>
@@ -18,7 +18,7 @@ export default function HeroPost({
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link
-              href={`/posts/${slug}`}
+              href={`/posts/${id}`}
               className="hover:underline"
               dangerouslySetInnerHTML={{ __html: title }}
             ></Link>

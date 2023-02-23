@@ -70,6 +70,7 @@ export async function getAllPostsForHome(preview) {
             excerpt
             slug
             date
+            id
             featuredImage {
               node {
                 sourceUrl

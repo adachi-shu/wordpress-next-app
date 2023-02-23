@@ -1,4 +1,5 @@
 import PostPreview from './post-preview'
+import Link from 'next/link'
 
 export default function MoreStories({ posts }) {
   return (
@@ -17,7 +18,9 @@ export default function MoreStories({ posts }) {
           //   slug={node.slug}
           //   excerpt={node.excerpt}
           // />
-          <p>{node.title}</p>
+          <Link href={`/posts/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
+            <p>{node.title}</p>
+          </Link>
         ))}
       </div>
     </section>

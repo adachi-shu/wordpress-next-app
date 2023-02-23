@@ -25,7 +25,7 @@ export default function Index({ allPosts: { edges }, preview }) {
             coverImage={heroPost.featuredImage}
             date={heroPost.date}
             author={heroPost.author}
-            slug={heroPost.slug}
+            id={heroPost.id}
             excerpt={heroPost.excerpt}
           />
         )}
