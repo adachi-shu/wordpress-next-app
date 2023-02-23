@@ -25,7 +25,6 @@ export const getStaticProps: GetStaticProps = async ({preview = false}) => {
 export default function Blogs({ allData: { edges }, popularData }) {
   const data = edges
   const img = data.featuredImage?.node.sourceUrl
-  console.log(data)
 
   const popularBlogData = popularData.map((v) => {
     return data.find((e) => {
@@ -56,6 +55,7 @@ export default function Blogs({ allData: { edges }, popularData }) {
                   id={node.id}
                   excerpt={node.excerpt}
                   image={node.featuredImage}
+                  key={node.id}
                 />
               )}
             </Link>

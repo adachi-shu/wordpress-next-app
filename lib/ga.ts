@@ -13,7 +13,7 @@ export const fetchPopularPosts = async (
   pageSize: number
 ) => {
   const [response] = await analyticsDataClient.runReport({
-    property: `properties/353050393`,
+    property: `properties/${process.env.GA_PROPERTY_ID}`,
     dateRanges: [
       {
         startDate: startDate,
