@@ -28,7 +28,7 @@ export default function Blogs({ allPosts: { edges }, preview }) {
         <div className="flex flex-wrap">
           {data.map(({ node }) => (
            <div className="md:basis-1/3 basis-1/2 p-2">
-            <Link href={`/blog/${node.id}`} key={node.id}>
+            <Link href={`/posts/${node.id}`} key={node.id}>
               {data && (
                 <CardItem
                   title={node.title}
