@@ -18,8 +18,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 18.12.1
-    - run: touch .env
-    - run: echo "ALL_ENV=${{ secrets.ALL_ENV }}" >> .env
+    - name: 'Create env file'
+        run: |
+          touch .env
+          echo WORDPRESS_API_URL=${{ secrets.WORDPRESS_API_URL }} >> .env
+          echo GA_CLIENT_EMAIL=${{ secrets.GA_CLIENT_EMAIL }} >> .env
+          echo GA_PRIVATE_KEY=${{ secrets.GA_PRIVATE_KEY }} >> .env
+          echo GA_PROPERTY_ID=${{ secrets.GA_PROPERTY_ID }} >> .env
+          echo NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }} >> .env
+          cat .env
     - name: yarn install
       run: |
            npm install
