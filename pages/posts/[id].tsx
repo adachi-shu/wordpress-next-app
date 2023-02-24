@@ -7,7 +7,6 @@ import Img from "./public/photo.jpg"
 import Header from '../../components/header';
 
 export default function Blog({post}) {
-  console.log(post)
 
   return (
     <div>

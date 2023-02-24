@@ -18,12 +18,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 18.12.1
-    - run: touch .env
-    - run: echo "WORDPRESS_API_URL=${{ secrets.WORDPRESS_API_URL_KEY }}" >> .env
-    - run: echo "GA_CLIENT_EMAIL=${{ secrets.GA_CLIENT_EMAIL }}" >> .env
-    - run: echo "GA_PRIVATE_KEY=${{ secrets.GA_PRIVATE_KEY }}" >> .env
-    - run: echo "GA_PROPERTY_ID=${{ secrets.GA_PROPERTY_ID }}" >> .env
-    - run: echo "NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}" >> .env
     - name: yarn install
       run: |
            npm install
