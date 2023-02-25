@@ -48,7 +48,7 @@ export default function Blogs({ allData: { edges }, popularData }) {
         </div>
         <div className="flex flex-wrap">
           {popularBlogData.map(({ node }) => (
-            <Link href={`/blog/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
+            <Link href={`/posts/${node.id}`} key={node.id} className="md:basis-1/3 basis-1/2 p-2">
               {data && (
                 <CardItem
                   title={node.title}

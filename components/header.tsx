@@ -26,6 +26,9 @@ export default function Header() {
           <Navbar.Link href="/contact">
             Contact
           </Navbar.Link>
+          <Navbar.Link href="/popular">
+            Pop
+          </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
   )
