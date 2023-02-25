@@ -6,6 +6,8 @@ on:
   repository_dispatch:
     branches: [ "main" ]
     types: [update_post]
+  schedule:
+    - cron: '0 8 * * *'
 
 jobs:
   build:
