@@ -7,7 +7,30 @@ on:
     branches: [ "main" ]
     types: [update_post]
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '15 0 * * *'
+    - cron: '15 1 * * *'
+    - cron: '15 2 * * *'
+    - cron: '15 3 * * *'
+    - cron: '15 4 * * *'
+    - cron: '15 5 * * *'
+    - cron: '15 6 * * *'
+    - cron: '15 7 * * *'
+    - cron: '15 8 * * *'
+    - cron: '15 9 * * *'
+    - cron: '15 10 * * *'
+    - cron: '15 11 * * *'
+    - cron: '15 12 * * *'
+    - cron: '15 13 * * *'
+    - cron: '15 14 * * *'
+    - cron: '15 15 * * *'
+    - cron: '15 16 * * *'
+    - cron: '15 17 * * *'
+    - cron: '15 18 * * *'
+    - cron: '15 19 * * *'
+    - cron: '15 20 * * *'
+    - cron: '15 21 * * *'
+    - cron: '15 22 * * *'
+    - cron: '15 23 * * *'
 
 jobs:
   build:
