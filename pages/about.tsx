@@ -11,7 +11,7 @@ export default function About() {
       <Head>
         <title>ABOUT</title>
       </Head>
-      <div className="m-20">
+      <div className="m-auto p-20 lg:max-w-5xl">
         <div className="text-center">
           {/* ボーダー長め */}
           {/* <h1 className="block text-3xl font-bold border-inherit border-solid border-b-2 mb-14 mx-auto w-32">ABOUT</h1> */}

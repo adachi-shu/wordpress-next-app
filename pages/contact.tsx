@@ -4,7 +4,7 @@ import Header from "../components/header";
 
 export default function Contact() {
   return (
-    <div className="m-20">
+    <div>
       <Header/>
       <Head>
         <title>CONTACT</title>
