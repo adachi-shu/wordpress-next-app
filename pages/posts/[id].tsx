@@ -7,6 +7,7 @@ import Img from "./public/photo.jpg"
 import Header from '../../components/header';
 
 export default function Blog({post}) {
+  console.log(post)
 
   return (
     <div>
@@ -22,9 +23,14 @@ export default function Blog({post}) {
         <div className="text-center">
           <h1 className="inline-block text-3xl font-bold border-inherit border-solid border-b-2 mb-14">BLOG</h1>
         </div>
-        <div className="flex flex-wrap">
-          post.title = {post.title}
-        </div>
+        <div className="">
+          <h2 className='font-bold text-2xl mb-10'>{post.title}</h2>
+          <div
+            className="font-normal text-gray-700 dark:text-gray-400"
+            dangerouslySetInnerHTML={{
+              __html: `${post.content}`,
+            }}/>
+            </div>
       </div>
     </div>
   )
